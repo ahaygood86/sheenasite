@@ -1,0 +1,24 @@
+{
+  "name": "sheenasite",
+  "version": "1.0.0",
+  "description": "Site for Sheena Bowker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sheenasite"
+  },
+  "author": "andy haygood",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
+  }
+}
