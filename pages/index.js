@@ -1,9 +1,8 @@
 import Link from 'next/link';
+import Home from '../components/Home';
 
 const Index = () => (
-  <div>
-    <p>This is the Home page</p>
-  </div>
+  <Home />
 )
 
-export default Index
+export default Index;
