@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-const Index = () => (
+const LoginPage = () => (
   <div>
     <p>This is the Home page</p>
   </div>
 )
 
-export default Index
+export default LoginPage;

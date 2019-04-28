@@ -1,7 +1,14 @@
 import Link from 'next/link'
+import styled from 'styled-components';
+
+const HeaderStyles = styled.div`
+  margin: 10px;
+  text-align: center;
+  background: green;
+`;
 
 const Header = () => (
-  <div>
+  <HeaderStyles>
     <Link href="/">
       <a>Home</a>
     </Link>
@@ -17,7 +24,10 @@ const Header = () => (
     <Link href="/club">
       <a>Fan Club</a>
     </Link>
-  </div>
+    <Link href="/login">
+      <a>Login</a>
+    </Link>
+  </HeaderStyles>
 )
 
 export default Header
