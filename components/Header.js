@@ -15,11 +15,25 @@ Router.onRouteChangeError = () => {
 };
 
 const HeaderStyles = styled.div`
-  margin: 10px;
+  display: flex;
+  justify-content: center;
   text-align: center;
   background: green;
   border: 5px solid yellow;
   border-radius: 10px;
+  @media (min-width: 1001px) {
+    flex-direction: row;
+    margin: 10px;
+  }
+  @media (max-width: 1000px) {
+    &.open {
+      flex-direction: column;
+    }
+    &:not(.open) {
+      display: none;
+    }
+    /* display: none; */
+  }
 `;
 
 const LinkStyles = styled.a`
@@ -28,12 +42,15 @@ const LinkStyles = styled.a`
   margin: 10px 5px;
   padding: 5px;
   border-radius: 10px;
+  &:hover {
+    background: grey;
+  }
 `;
 
 const Header = () => (
   <HeaderStyles>
     <Link href="/">
-      <LinkStyles role="button">Home</LinkStyles>
+      <LinkStyles>Home</LinkStyles>
     </Link>
     <Link href="/about">
       <LinkStyles>About</LinkStyles>

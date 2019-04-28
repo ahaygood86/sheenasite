@@ -28,9 +28,11 @@ const Inner = styled.div`
 `;
 
 const Logo = styled.div`
-font-size: 4rem;
+  font-size: 4rem;
+  font-weight: bold;
   margin: auto;
   text-align: center;
+  background: ${props => props.theme.red};
   color: ${props => props.theme.offWhite};
   border: 5px solid grey;
   border-radius: 10px;
@@ -48,7 +50,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height: 2;  }
+    line-height: 2;
+    font-family: 'Kalam', cursive;  
+  }
   a {
     text-decoration: none;
     color: ${theme.red};
