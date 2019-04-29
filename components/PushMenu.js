@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import NavMenu from './NavMenu';
+import PushMenuButtons from './PushMenuButtons';
 
 const PushMenuStyles = styled.div`
     position: fixed;
@@ -23,19 +23,18 @@ const PushMenuStyles = styled.div`
     @media (min-width: 1025px) {
         display: none;
     }
+    background: yellow;
 `;
 
 class PushMenu extends Component {
-
-
-
     render() {
+        const { pushMenuOpen, handlePushMenu } = this.props;
         return (
-            <PushMenuStyles className="open">
-              <NavMenu handleClosePush={this.props.handleClosePush}/>
+            <PushMenuStyles className={pushMenuOpen ? "open" : ""}>
+                <PushMenuButtons handlePushMenu={handlePushMenu} />
             </PushMenuStyles>
         );
     }
 }
 
-export default PushMenu;<p>Test</p>
+export default PushMenu;

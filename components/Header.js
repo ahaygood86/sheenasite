@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import NProgress from 'nprogress';
 import Router from 'next/router';
@@ -21,8 +22,9 @@ const HeaderStyles = styled.div`
   background: green;
   border: 5px solid yellow;
   border-radius: 10px;
+  flex-direction: row;
   @media (min-width: 1001px) {
-    flex-direction: row;
+
     margin: 10px;
   }
   @media (max-width: 1000px) {
@@ -30,10 +32,17 @@ const HeaderStyles = styled.div`
   }
 `;
 
-const Header = () => (
-  <HeaderStyles>
-    <NavMenu />
-  </HeaderStyles>
-)
+class Header extends Component {
+  render() {
+    const { pushMenuOpen } = this.props;
+    console.log(pushMenuOpen);
+    return (
 
-export default Header
+      <HeaderStyles>
+        <NavMenu pushMenuOpen={this.props.pushMenuOpen} />
+      </HeaderStyles>
+    );
+  }
+}
+
+export default Header;

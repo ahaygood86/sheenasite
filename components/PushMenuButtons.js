@@ -12,24 +12,39 @@ const LinkStyles = styled.div`
   margin: 10px 5px;
   padding: 10px 5px 5px 5px;
   border-radius: 10px;
+  & p {
+    @media (max-width: 1024px) {
+        color: white;
+        font-size: 1.5em;
+        margin: 0 auto;
+    }
+  }
   &:hover {
     background: grey;
   }
 `;
 
-const NavStyles = styled.div`
+const PushNavStyles = styled.div`
+    @media (max-width: 1024px) {
         display: flex;
+        flex-direction: column;
+        height: 95vh;
+        justify-content: space-around;
+        align-items: stretch;
+        padding: 10px 15px;
+        margin: 15px;
+        border-radius: 10px;
+    }
+    @media (min-width: 1025px) {
         flex-direction: row;
         max-width: 80vw;
+    }
 `;
 
-
-class NavMenu extends Component {
+class PushMenuButtons extends Component {
     render() {
-        console.log('nav menu');
-        console.log(this.props.pushMenuOpen)
         return (
-            <NavStyles>
+            <PushNavStyles>
                 <Link href="/">
                     <LinkStyles><a>Home</a></LinkStyles>
                 </Link>
@@ -48,9 +63,12 @@ class NavMenu extends Component {
                 <Link href="/login">
                     <LinkStyles><a>Login</a></LinkStyles>
                 </Link>
-            </NavStyles>
+                <LinkStyles>
+                    <p onClick={this.props.handlePushMenu}>Close</p>
+                </LinkStyles>
+            </PushNavStyles>
         );
     }
 }
 
-export default NavMenu;
+export default PushMenuButtons;

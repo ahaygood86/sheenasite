@@ -3,6 +3,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Meta from './Meta';
 import PushMenu from './PushMenu';
+import OpenPushButton from './OpenPushButton';
 
 const theme = {
   red: '#FF0000',
@@ -70,14 +71,13 @@ const GlobalStyle = createGlobalStyle`
 class Page extends Component {
 
     state = {
-        open: false
+        pushMenuOpen: false
     };
 
-    handleClosePush = () => {
-        console.log('triggered');
-        this.setState({
-            open: false
-        });
+    handlePushMenu = () => {
+        this.setState(prevState => ({
+          pushMenuOpen: !prevState.pushMenuOpen
+        }));
     }
 
     render() {
@@ -86,9 +86,16 @@ class Page extends Component {
                 <StyledPage>
                     <GlobalStyle />
                     <Meta />
-                    <PushMenu handleClosePush={this.handleClosePush} />
+                    <PushMenu 
+                      pushMenuOpen={this.state.pushMenuOpen}
+                      handlePushMenu={this.handlePushMenu} 
+                    />
+                    <OpenPushButton 
+                      pushMenuOpen={this.state.pushMenuOpen}
+                      handlePushMenu={this.handlePushMenu} 
+                    />
                     <Logo>Sheena Bowker Logo</Logo>
-                    <Header />
+                    <Header pushMenuOpen={this.state.pushMenuOpen} />
                     <Inner>{this.props.children}</Inner>
                 </StyledPage>                
             </ThemeProvider>
