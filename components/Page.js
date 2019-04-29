@@ -17,6 +17,10 @@ const theme = {
 const StyledPage = styled.div`
   background: black;
   color: ${props => props.theme.black};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 `;
 
 const Inner = styled.div`
@@ -26,6 +30,8 @@ const Inner = styled.div`
   background: red;
   border: 2px solid grey;
   border-radius: 10px;
+  flex-grow: 1;
+  min-width: 80vw;
 `;
 
 const Logo = styled.div`
@@ -37,6 +43,7 @@ const Logo = styled.div`
   color: ${props => props.theme.offWhite};
   border: 5px solid grey;
   border-radius: 10px;
+  flex-grow: 0;
 `;
 
 const GlobalStyle = createGlobalStyle`

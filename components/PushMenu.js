@@ -5,15 +5,15 @@ import NavMenu from './NavMenu';
 const PushMenuStyles = styled.div`
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     @media (max-width: 1000px) {
         &:not(.open) {
             display: none;            
         }
         & .open {
-            display: flex;
+            display: block;
             z-index: 2;
-
+            flex-direction: column;
             top: 0;
             left: 0;
             right: 0;
