@@ -26,8 +26,6 @@ const NavStyles = styled.div`
 
 class NavMenu extends Component {
     render() {
-        console.log('nav menu');
-        console.log(this.props.pushMenuOpen)
         return (
             <NavStyles>
                 <Link href="/">

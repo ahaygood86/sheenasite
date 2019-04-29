@@ -13,6 +13,7 @@ const OpenPushButtonStyles = styled.div`
     color: white;
     transform: rotate(90deg);
     z-index: 2;
+    cursor: pointer;
     .hidden {
         display: none !important;
     }
@@ -22,7 +23,6 @@ const OpenPushButtonStyles = styled.div`
     &:hover {
         background: grey;
     }
-
 `;
 
 class OpenPushButton extends Component {
@@ -30,7 +30,12 @@ class OpenPushButton extends Component {
         const { pushMenuOpen, handlePushMenu } = this.props;
         return (
             <OpenPushButtonStyles>
-                <div className={pushMenuOpen ? "hidden" : ""} onClick={handlePushMenu}>Menu</div>
+                <div 
+                    className={pushMenuOpen ? "hidden" : ""} 
+                    onClick={handlePushMenu}
+                >
+                    Menu
+                </div>
             </OpenPushButtonStyles>    
         );
     }

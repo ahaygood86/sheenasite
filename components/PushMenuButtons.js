@@ -46,25 +46,25 @@ class PushMenuButtons extends Component {
         return (
             <PushNavStyles>
                 <Link href="/">
-                    <LinkStyles><a>Home</a></LinkStyles>
+                    <LinkStyles onClick={this.props.handlePushMenu}><a>Home</a></LinkStyles>
                 </Link>
                 <Link href="/about">
-                    <LinkStyles><a>About</a></LinkStyles>
+                    <LinkStyles onClick={this.props.handlePushMenu}><a>About</a></LinkStyles>
                 </Link>
                 <Link href="/gallery">
-                    <LinkStyles><a>Gallery</a></LinkStyles>
+                    <LinkStyles onClick={this.props.handlePushMenu}><a>Gallery</a></LinkStyles>
                 </Link>
                 <Link href="/blog">
-                    <LinkStyles><a>Blog</a></LinkStyles>
+                    <LinkStyles onClick={this.props.handlePushMenu}><a>Blog</a></LinkStyles>
                 </Link>
                 <Link href="/club">
-                    <LinkStyles><a>Fan Club</a></LinkStyles>
+                    <LinkStyles onClick={this.props.handlePushMenu}><a>Fan Club</a></LinkStyles>
                 </Link>
                 <Link href="/login">
-                    <LinkStyles><a>Login</a></LinkStyles>
+                    <LinkStyles onClick={this.props.handlePushMenu}><a>Login</a></LinkStyles>
                 </Link>
-                <LinkStyles>
-                    <p onClick={this.props.handlePushMenu}>Close</p>
+                <LinkStyles onClick={this.props.handlePushMenu}>
+                    <p>Close</p>
                 </LinkStyles>
             </PushNavStyles>
         );
