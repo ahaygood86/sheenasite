@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Meta from './Meta';
+import PushMenu from './PushMenu';
 
 const theme = {
   red: '#FF0000',
@@ -66,6 +67,7 @@ class Page extends Component {
                 <StyledPage>
                     <GlobalStyle />
                     <Meta />
+                    <PushMenu />
                     <Logo>Sheena Bowker Logo</Logo>
                     <Header />
                     <Inner>{this.props.children}</Inner>

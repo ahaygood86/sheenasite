@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import styled from 'styled-components';
 import NProgress from 'nprogress';
 import Router from 'next/router';
+import NavMenu from './NavMenu';
 
 Router.onRouteChangeStart = () => {
   NProgress.start();
@@ -26,47 +26,13 @@ const HeaderStyles = styled.div`
     margin: 10px;
   }
   @media (max-width: 1000px) {
-    &.open {
-      flex-direction: column;
-    }
-    &:not(.open) {
-      display: none;
-    }
-    /* display: none; */
-  }
-`;
-
-const LinkStyles = styled.a`
-  background: blue;
-  cursor: pointer;
-  margin: 10px 5px;
-  padding: 5px;
-  border-radius: 10px;
-  &:hover {
-    background: grey;
+    display: none;
   }
 `;
 
 const Header = () => (
   <HeaderStyles>
-    <Link href="/">
-      <LinkStyles>Home</LinkStyles>
-    </Link>
-    <Link href="/about">
-      <LinkStyles>About</LinkStyles>
-    </Link>
-    <Link href="/gallery">
-      <LinkStyles>Gallery</LinkStyles>
-    </Link>
-    <Link href="/blog">
-      <LinkStyles>Blog</LinkStyles>
-    </Link>
-    <Link href="/club">
-      <LinkStyles>Fan Club</LinkStyles>
-    </Link>
-    <Link href="/login">
-      <LinkStyles>Login</LinkStyles>
-    </Link>
+    <NavMenu />
   </HeaderStyles>
 )
 
