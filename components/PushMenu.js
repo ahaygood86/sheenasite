@@ -6,7 +6,7 @@ const PushMenuStyles = styled.div`
     position: fixed;
     width: 100%;
     height: 100%;
-    @media (max-width: 1000px) {
+    @media (max-width: 1024px) {
         &:not(.open) {
             display: none;            
         }
@@ -20,16 +20,19 @@ const PushMenuStyles = styled.div`
             bottom: 0;
         }
     }
-    @media (min-width: 1001px) {
+    @media (min-width: 1025px) {
         display: none;
     }
 `;
 
 class PushMenu extends Component {
+
+
+
     render() {
         return (
             <PushMenuStyles className="open">
-              <NavMenu />
+              <NavMenu handleClosePush={this.props.handleClosePush}/>
             </PushMenuStyles>
         );
     }

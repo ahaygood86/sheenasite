@@ -68,13 +68,25 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 class Page extends Component {
+
+    state = {
+        open: false
+    };
+
+    handleClosePush = () => {
+        console.log('triggered');
+        this.setState({
+            open: false
+        });
+    }
+
     render() {
         return (
             <ThemeProvider theme={theme}>
                 <StyledPage>
                     <GlobalStyle />
                     <Meta />
-                    <PushMenu />
+                    <PushMenu handleClosePush={this.handleClosePush} />
                     <Logo>Sheena Bowker Logo</Logo>
                     <Header />
                     <Inner>{this.props.children}</Inner>
