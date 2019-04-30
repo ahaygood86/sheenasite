@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build"
   },
   "repository": {
     "type": "git",
     "url": "sheenasite"
+  },
+  "engines": {
+    "node": "8"
   },
   "author": "andy haygood",
   "license": "ISC",

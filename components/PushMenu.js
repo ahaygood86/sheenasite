@@ -4,14 +4,18 @@ import PushMenuButtons from './PushMenuButtons';
 
 const PushMenuStyles = styled.div`
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 96%;
+    height: 98%;
+    display: block;
+    border-radius: 10px;
+    transition: margin .5s ease-in;
+    overflow: hidden;
+    margin: 1vh 0 0 0;
     @media (max-width: 1024px) {
         &:not(.open) {
-            display: none;            
+            margin: 1vh 0 0 -100vw;           
         }
-        & .open {
-            display: block;
+        & .open {            
             z-index: 2;
             flex-direction: column;
             top: 0;
