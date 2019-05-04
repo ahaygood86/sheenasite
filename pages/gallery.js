@@ -1,7 +1,12 @@
-export default function Gallery() {
+import React, { Component } from 'react';
+import Gallery from '../components/Gallery';
+
+class gallery extends Component {
+  render() {
     return (
-      <div>
-        <p>This is the gallery page</p>
-      </div>
-    )
+      <Gallery />
+    );
   }
+}
+
+export default gallery;
