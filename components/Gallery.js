@@ -59,7 +59,9 @@ class Gallery extends Component {
         );
       }
 
-      _toggleShowVideo = (url) => {
+    _toggleShowVideo = (url) => {
+        console.log(url);
+        console.log(this.state);
       this.state.showVideo[url] = !Boolean(this.state.showVideo[url]);
       this.setState({
         showVideo: this.state.showVideo
@@ -76,12 +78,25 @@ class Gallery extends Component {
       }
     }
 
+    _resetVideo = () => {
+        this.setState({showVideo: {}});
+
+        if (!this.state.showGalleryPlayButton) {
+        this.setState({showGalleryPlayButton: true});
+        }
+
+        if (!this.state.showGalleryFullscreenButton) {
+        this.setState({showGalleryFullscreenButton: true});
+        }
+    }
+
     render() {
         return (
             <ImageGallery 
                 items={this.images}
                 showFullscreenButton={this.state.showGalleryFullscreenButton}
-                showPlayButton={this.state.showGalleryPlayButton}            
+                showPlayButton={this.state.showGalleryPlayButton}
+                onSlide={this._resetVideo}            
             />
         );
     }

@@ -1,9 +1,8 @@
 import Link from 'next/link';
+import Login from '../components/Login';
 
 const LoginPage = () => (
-  <div>
-    <p>This is the Login page</p>
-  </div>
+  <Login />
 )
 
 export default LoginPage;
