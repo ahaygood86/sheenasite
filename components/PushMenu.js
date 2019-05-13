@@ -11,7 +11,7 @@ const PushMenuStyles = styled.div`
     transition: margin .5s ease-in;
     overflow: hidden;
     margin: 1vh 0 0 0;
-    @media (max-width: 1024px) {
+    @media (max-width: ${props => props.theme.viewportSizeTabletMax}) {
         &:not(.open) {
             margin: 1vh 0 0 -100vw;           
         }
@@ -24,10 +24,10 @@ const PushMenuStyles = styled.div`
             bottom: 0;
         }
     }
-    @media (min-width: 1025px) {
+    @media (min-width: ${props => props.theme.viewportSizeDesktopMin}) {
         display: none;
     }
-    background: yellow;
+    background: ${props => props.theme.borderColorNavMenu};
 `;
 
 class PushMenu extends Component {

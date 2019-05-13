@@ -8,7 +8,7 @@ const OpenPushButtonStyles = styled.div`
     margin: 20px 0 0 -5px;
     padding: 0px 5px;
     position: fixed;
-    background: blue;
+    background: ${props => props.theme.backgroundColorNavLinks};
     border-radius: 10px;
     color: white;
     transform: rotate(90deg);
@@ -17,7 +17,7 @@ const OpenPushButtonStyles = styled.div`
     .hidden {
         display: none !important;
     }
-    @media (min-width: 1025px) {
+    @media (min-width: ${props => props.theme.viewportSizeDesktopMin}) {
         display: none;
     }
     &:hover {

@@ -8,18 +8,25 @@ import PushMenu from './PushMenu';
 import OpenPushButton from './OpenPushButton';
 
 const theme = {
-  red: '#FF0000',
-  black: '#393939',
-  grey: '#3A3A3A',
-  lightgrey: '#E1E1E1',
-  offWhite: '#EDEDED',
-  maxWidth: '1600px',
-  bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
+  backgroundColorMain: 'linear-gradient(to bottom right, #3A3A3A, orange)', //off-black
+  backgroundColorAlt: '#FF0000', //red
+  backgroundColorNavLinks: 'blue',
+  backgroundColorNavMenu: 'green',
+  borderColorLogo: '#3A3A3A', //dark grey
+  borderColorMain: 'grey',
+  borderColorNavMenu: 'white',
+  fontColorMain: '#393939',
+  fontColorLink: '#FF0000', //red
+  fontColorLogo: '#EDEDED', //off-white
+  viewportSizePhoneMax: '360px',
+  viewportSizeTabletMin: '361px',
+  viewportSizeTabletMax: '1024px',
+  viewportSizeDesktopMin: '1025px',
 };
 
 const StyledPage = styled.div`
-  background: black;
-  color: ${props => props.theme.black};
+  background-image: ${props => props.theme.backgroundColorMain};
+  color: ${props => props.theme.fontColorMain};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,11 +34,11 @@ const StyledPage = styled.div`
 `;
 
 const Inner = styled.div`
-  max-width: ${props => props.theme.maxWidth};
+  max-width: 95vw;
   margin: 0 auto;
   padding: 2rem;
-  background: red;
-  border: 2px solid grey;
+  background: ${props => props.theme.backgroundColorAlt};
+  border: 2px solid ${props => props.theme.borderColorMain};
   border-radius: 10px;
   flex-grow: 1;
   min-width: 80vw;
@@ -42,9 +49,9 @@ const Logo = styled.div`
   font-weight: bold;
   margin: auto;
   text-align: center;
-  background: ${props => props.theme.red};
-  color: ${props => props.theme.offWhite};
-  border: 5px solid grey;
+  background: ${props => props.theme.backgroundColorAlt};
+  color: ${props => props.theme.fontColorLogo};
+  border: 5px solid ${props => props.theme.borderColorLogo};
   border-radius: 10px;
   flex-grow: 0;
 `;
@@ -66,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${theme.red};
+    color: ${theme.fontColorLink};
   }
 `;
 
@@ -86,7 +93,7 @@ class Page extends Component {
           storageBucket: "sheenasite-bc72b.appspot.com",
           messagingSenderId: "1048213810361",
           appId: "1:1048213810361:web:5ce0b2023cde1f17"
-        };
+      };
          
       firebase.initializeApp(firebaseConfig);
       firebase.auth().onAuthStateChanged(function(user) {

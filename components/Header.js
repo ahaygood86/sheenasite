@@ -19,8 +19,8 @@ const HeaderStyles = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  background: green;
-  border: 5px solid yellow;
+  background: ${props => props.theme.backgroundColorNavMenu};
+  border: 5px solid ${props => props.theme.borderColorNavMenu};
   border-radius: 10px;
   flex-direction: row;
   @media (min-width: 1001px) {

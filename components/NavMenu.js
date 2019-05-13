@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const LinkStyles = styled.div`
-  background: blue;
+  background: ${props => props.theme.backgroundColorNavLinks};
   flex-grow: 0;
   text-align: center;
   font-size: 1.5em;

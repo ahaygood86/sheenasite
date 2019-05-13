@@ -30,7 +30,6 @@ class Login extends Component {
     }
 
     handleLogout = () => {
-        console.log("logging out")
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
             console.log("We are signed out")
@@ -43,12 +42,12 @@ class Login extends Component {
     render() {
         return (
             <div>
-            <form onSubmit={this.handleSubmit}>
-                Email: <input type="text" placeholder="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
-                Password: <input type="text" placeholder="password" name="password" value={this.state.password} onChange={this.handlePasswordChange}/>
-                <button type="submit">Login</button>
-            </form>
-            <button type="button" onClick={this.handleLogout}>Log Out</button>
+                <form onSubmit={this.handleSubmit}>
+                    Email: <input type="text" placeholder="email" name="email" value={this.state.email} onChange={this.handleEmailChange}/>
+                    Password: <input type="password" placeholder="password" name="password" value={this.state.password} onChange={this.handlePasswordChange}/>
+                    <button type="submit">Login</button>
+                </form>
+                <button type="button" onClick={this.handleLogout}>Log Out</button>`
             </div>
         );
     }

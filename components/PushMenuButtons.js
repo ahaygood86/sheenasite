@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const LinkStyles = styled.div`
-  background: blue;
+  background: ${props => props.theme.backgroundColorNavLinks};
   flex-grow: 0;
   text-align: center;
   font-size: 1.5em;
@@ -13,7 +13,7 @@ const LinkStyles = styled.div`
   padding: 10px 5px 5px 5px;
   border-radius: 10px;
   & p {
-    @media (max-width: 1024px) {
+    @media (max-width: ${props => props.theme.viewportSizeTabletMax}) {
         color: white;
         font-size: 1.5em;
         margin: 0 auto;
@@ -25,7 +25,7 @@ const LinkStyles = styled.div`
 `;
 
 const PushNavStyles = styled.div`
-    @media (max-width: 1024px) {
+    @media (max-width: ${props => props.theme.viewportSizeTabletMax}) {
         display: flex;
         flex-direction: column;
         height: 95vh;
@@ -35,7 +35,7 @@ const PushNavStyles = styled.div`
         margin: 15px;
         border-radius: 10px;
     }
-    @media (min-width: 1025px) {
+    @media (min-width: ${props => props.theme.viewportSizeDesktopMin}) {
         flex-direction: row;
         max-width: 80vw;
     }
