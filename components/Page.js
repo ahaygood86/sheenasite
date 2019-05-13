@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import firebase from 'firebase/app';
+import "firebase/auth";
 import Header from './Header';
 import Meta from './Meta';
 import PushMenu from './PushMenu';
@@ -73,6 +75,30 @@ class Page extends Component {
     state = {
         pushMenuOpen: false
     };
+
+    componentDidMount() {
+      //TODO: set this elsewhere
+      var firebaseConfig = {
+          apiKey: "AIzaSyDB7uHKG3EP7XI7B4DfLAK--0c-Qa3BNM4",
+          authDomain: "sheenasite-bc72b.firebaseapp.com",
+          databaseURL: "https://sheenasite-bc72b.firebaseio.com",
+          projectId: "sheenasite-bc72b",
+          storageBucket: "sheenasite-bc72b.appspot.com",
+          messagingSenderId: "1048213810361",
+          appId: "1:1048213810361:web:5ce0b2023cde1f17"
+        };
+         
+      firebase.initializeApp(firebaseConfig);
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            console.log(user)
+          } else {
+            // No user is signed in.
+            console.log('no!')
+          }
+        });
+  }
 
     handlePushMenu = () => {
         this.setState(prevState => ({
